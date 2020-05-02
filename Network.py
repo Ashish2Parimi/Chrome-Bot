@@ -24,12 +24,12 @@ model = Sequential([
 model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy'])
 
 earlyStopping = EarlyStopping(monitor='val_accuracy', patience=10, verbose=0, mode='max')
-mcp_save = ModelCheckpoint('D:\Project\dino_4', save_best_only=True, monitor='val_accuracy', mode='max')
-datagen = ImageDataGenerator( validation_split=0.25, rescale=1./255,zoom_range = 0.2)
+mcp_save = ModelCheckpoint('.dino_326', save_best_only=True, monitor='val_accuracy', mode='max')
+datagen = ImageDataGenerator( validation_split=0.1, rescale=1./255)
 train_generator = datagen.flow_from_directory(
         'D:/Project/images',
         target_size=(160, 320),
-        batch_size=32,
+        batch_size=1,
         subset='training',
         color_mode = 'grayscale',
         class_mode='categorical')
@@ -43,4 +43,4 @@ validation_generator = datagen.flow_from_directory(
 model.fit(train_generator,
         epochs=60,
         validation_data=validation_generator,callbacks=[earlyStopping, mcp_save])
-model.save('D:\Project\dino-t.h5')
+model.save('.dino_326.h5')
