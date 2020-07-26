@@ -75,7 +75,7 @@ We used early stopping callback and ModelCheckpoint to save the weights of the b
 
 Selenium is used to create an interface  to open a browser in offline mode to initiate the game.The screen of the play environment is then captured such that it contains only the obstacles using mss, pre-processed(Edge Detected and Re-Sized) and passed to the model for prediction. These predictions are then passed to the browser to perform actions using selenium.The capture window is adjusted after 38sec of start of the game to compensate for the increase in the speed.
 8.Results:
-We should be able to get good results by using this architecture. The GPU has significantly improved the results which can be validated with the improvement in the average score. The average score per 10 games stays well above 326.The highest score recorded was 586 and the lowest was around 56.The speed of the Dino is proportional to the score, making it harder to detect and decide an action at higher speed. 
+We should be able to get good results by using this architecture. The GPU has significantly improved the results which can be validated with the improvement in the average score. The average score per 10 games stays well above 536.The highest score recorded was 1713 and the lowest was around 57.The speed of the Dino is proportional to the score, making it harder to detect and decide an action at higher speed. 
 
 
                          Figure 8 One of the Scores Captured from our Model                                                       
